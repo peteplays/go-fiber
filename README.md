@@ -19,7 +19,7 @@
   - Postman collection is included in this repo
     - Go Fiber
     - Star Wars API
-  - [Collection](https://github.com/peteplays/go-fiber/blob/main/Go_Fiber.postman_collection.json)
+  - [Collection](https://github.com/peteplays/go-fiber/blob/main/goFiber.postman_collection.json)
 
 **Docs**
   - [GO](https://go.dev/)
