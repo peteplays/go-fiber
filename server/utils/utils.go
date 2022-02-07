@@ -21,14 +21,13 @@ func HttpGet(path string) *http.Response {
 		baseUrl = os.Getenv("SW_API_ENDPOINT")
 	}
 
-	fmt.Println("URL:---", baseUrl+path)
+	fmt.Println("Calling external URL ->", baseUrl+path)
 
 	res, err := http.Get(baseUrl + path)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	// defer resp.Body.Close()
 	return res
 }
 
