@@ -101,7 +101,17 @@
 					"name": "Get People",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "{{host}}/sw/people",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"sw",
+								"people"
+							]
+						}
 					},
 					"response": []
 				},
