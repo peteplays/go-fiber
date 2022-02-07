@@ -3,16 +3,21 @@ package services
 import (
 	"encoding/json"
 	"go-fiber-api/utils"
-	"io"
 	"log"
-	"net/http"
 )
 
 type personResponse struct {
-	Name      string
-	Homeworld string
-	Vehicles  []string
-	Starships []string
+	Name      string   `json:"name"`
+	Homeworld string   `json:"homeWorld"`
+	Vehicles  []string `json:"vehicles,omitempty"`
+	Starships []string `json:"starships,omitempty"`
+}
+
+type peopleResponse struct {
+	Count    int              `json:"count"`
+	Next     string           `json:"next"`
+	Previous string           `json:"previous"`
+	Results  []personResponse `json:"results"`
 }
 
 type personResult struct {
@@ -45,19 +50,15 @@ func SayHello() string {
 	return "Hello from the service"
 }
 
-func GetPeople() string {
-	res, err := http.Get("people")
-	if err != nil {
+func GetPeople() peopleResponse {
+	res := utils.HttpGet("people")
+
+	var peopleRes peopleResponse
+	if err := json.NewDecoder(res.Body).Decode(&peopleRes); err != nil {
 		log.Fatal(err)
 	}
 
-	defer res.Body.Close()
-	body, err := io.ReadAll(res.Body)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	return string(body)
+	return peopleRes
 }
 
 func GetPerson(id string) personResult {
