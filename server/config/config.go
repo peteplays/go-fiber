@@ -14,10 +14,9 @@ func Init() {
 		log.Fatal("No env file found.")
 	}
 
-	port, portExists := os.LookupEnv("PORT")
+	_, portExists := os.LookupEnv("PORT")
 	if portExists {
-		os.Setenv("port", port)
-		fmt.Println("Localhost mount port (point postman here): " + os.Getenv("port"))
+		fmt.Println("Localhost mount port (point postman here): " + os.Getenv("PORT"))
 	} else {
 		log.Fatal(".env vars not defined. \n`PORT` is required. \nSee .env.template for reference")
 	}

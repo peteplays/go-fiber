@@ -17,5 +17,5 @@ func main() {
 
 	router.SetupRoutes(app)
 
-	app.Listen(":" + os.Getenv("port"))
+	app.Listen(":" + os.Getenv("PORT"))
 }
