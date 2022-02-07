@@ -17,5 +17,5 @@ func main() {
 
 	router.SetupRoutes(app)
 
-	app.Listen(":" + os.Getenv("hostAPIPort"))
+	app.Listen(":" + os.Getenv("port"))
 }

@@ -14,15 +14,12 @@ func Init() {
 		log.Fatal("No env file found.")
 	}
 
-	containerAPIPort, containerAPIPortExists := os.LookupEnv("CONTAINER_API_PORT")
-	hostAPIPort, hostAPIPortExists := os.LookupEnv("HOST_API_PORT")
-	if containerAPIPortExists && hostAPIPortExists {
-		os.Setenv("containerAPIPort", containerAPIPort)
-		os.Setenv("hostAPIPort", hostAPIPort)
-		fmt.Println("Container expose port: " + os.Getenv("containerAPIPort"))
-		fmt.Println("Localhost mount port (point postman here): " + os.Getenv("hostAPIPort"))
+	port, portExists := os.LookupEnv("PORT")
+	if portExists {
+		os.Setenv("port", port)
+		fmt.Println("Localhost mount port (point postman here): " + os.Getenv("port"))
 	} else {
-		log.Fatal(".env vars not defined. \nCONTAINER_API_PORT and HOST_API_PORT are both required. \nSee .env.template for reference")
+		log.Fatal(".env vars not defined. \n`PORT` is required. \nSee .env.template for reference")
 	}
 
 	swApiEndpoint, swApiEndpointExists := os.LookupEnv("SW_API_ENDPOINT")
