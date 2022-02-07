@@ -116,6 +116,25 @@
 					"response": []
 				},
 				{
+					"name": "Get People Random",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/sw/people/random",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"sw",
+								"people",
+								"random"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Get Person",
 					"request": {
 						"method": "GET",

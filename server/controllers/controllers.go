@@ -2,6 +2,8 @@ package controllers
 
 import (
 	"go-fiber-api/services"
+	"go-fiber-api/utils"
+	"strconv"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -33,6 +35,12 @@ func GetSW(ctx *fiber.Ctx) error {
 
 func GetPeople(ctx *fiber.Ctx) error {
 	res := services.GetPeople()
+
+	return ctx.JSON(res)
+}
+
+func GetPersonRandom(ctx *fiber.Ctx) error {
+	res := services.GetPerson(strconv.Itoa(utils.CreateRandomNumber()))
 
 	return ctx.JSON(res)
 }
