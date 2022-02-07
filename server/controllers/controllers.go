@@ -47,6 +47,11 @@ func GetPersonRandom(ctx *fiber.Ctx) error {
 
 func GetPerson(ctx *fiber.Ctx) error {
 	id := ctx.Params("id")
+	if _, err := strconv.Atoi(id); err != nil {
+		// if `id` is not a number get a random person
+		id = strconv.Itoa(utils.CreateRandomNumber())
+	}
+
 	res := services.GetPerson(id)
 
 	return ctx.JSON(res)

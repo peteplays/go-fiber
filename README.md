@@ -10,6 +10,7 @@
     - used for VSCode tooling
     - Mac users make sure you get the correct version (amd | arm)
   - [VSCode GO extension](https://marketplace.visualstudio.com/items?itemName=golang.go)
+  - current Docker setup will automatically recompile on save
 
 ***Running API***
   - Default port is `7777` which is set in the `.env` on root

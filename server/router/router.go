@@ -21,5 +21,4 @@ func SetupRoutes(app *fiber.App) {
 	swRoutes.Get("/people", controllers.GetPeople)
 	swRoutes.Get("/people/random", controllers.GetPersonRandom)
 	swRoutes.Get("/people/:id", controllers.GetPerson)
-
 }
