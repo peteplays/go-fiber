@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "683afcd1-f13c-41fe-a1eb-dfb26ab43dea",
+		"name": "Go Fiber",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Checks",
+			"item": [
+				{
+					"name": "Running",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}",
+							"host": [
+								"{{host}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/status/services",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"status",
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Service",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/status",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SW",
+			"item": [
+				{
+					"name": "Get SW Check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/sw",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"sw"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get SW",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/sw/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"sw",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get People",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get Person",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/sw/people/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"sw",
+								"people",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:7777",
+			"type": "string"
+		}
+	]
+}
