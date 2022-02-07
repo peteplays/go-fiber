@@ -1,0 +1,12 @@
+version: '3'
+services:
+  server:
+    container_name: server
+    build:
+      context: ./server
+    restart: always
+    ports:
+      - '${HOST_API_PORT}:${CONTAINER_API_PORT}'
+    volumes:
+      - ./server:/server:cached
+      - .env:/server/.env
